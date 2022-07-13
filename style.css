@@ -1,13 +1,53 @@
 @import url("https://use.typekit.net/jmk3xov.css");
 
 canvas {
-  position: fixed;
-  top: 0;
+  /* position: absolute; */
   left: 0;
 }
 
+/* Header */
+html,
+body {
+  height: 100%;
+}
 
-:root {
+header {
+  height: fit-content;
+  position: relative;
+}
+
+/* Classes */
+.centered {
+  text-align: center;
+}
+
+/* .full-height {
+  height: 100%;
+} */
+
+#website-name {
+  background-image: linear-gradient(#d1ffff, #dfffff);
+  position: absolute;
+  height: 100px;
+}
+
+#sky-bg-canvas {
+  position: relative;
+}
+
+div#website-name {
+  position: absolute;
+  left: 1%;
+  right: 0%;
+  top: 100%;
+}
+
+.topcorner {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+/* :root {
   --dark-bg: rgba(15, 15, 15, 0.95);
   --spacing: 350px;
 
@@ -78,4 +118,4 @@ canvas {
 
   .left {
     grid-column: 6 / 12;
-  }
+  } */

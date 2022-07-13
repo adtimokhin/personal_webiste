@@ -5,8 +5,8 @@ import gsap from "gsap";
 // Constants
 const INITIAL_CAMERA_HEIGHT = 30;
 const CHARACTER_STEP_SIZE = 0.5
-// Setup
 
+// Setup
 const scene = new THREE.Scene();
 
 const camera = new THREE.PerspectiveCamera(
@@ -82,39 +82,6 @@ scene.add(pointlight, ambientLight);
 var previousClientY = 0;
 var previousClientX = 0;
 
-function rotateCamera(event) {
-  // Moving camera in x-plane
-  const yDifference = event.clientY - previousClientY;
-  if (Math.abs(yDifference) > 1) {
-    if (yDifference < 0) {
-      if (camera.rotation.x < -Math.PI / 4) {
-        camera.rotation.x += 0.05;
-      }
-    } else {
-      if (camera.rotation.x > (-3 * Math.PI) / 4) {
-        camera.rotation.x -= 0.05;
-      }
-    }
-  }
-  previousClientY = event.clientY;
-
-  // Moving camera in y-plane
-  const xDifference = event.clientX - previousClientX;
-  if (Math.abs(xDifference) > 1) {
-    if (xDifference < 0) {
-      if (camera.rotation.y < Math.PI / 4) {
-        camera.rotation.y += 0.05;
-      }
-    } else {
-      if (camera.rotation.y > -Math.PI / 4) {
-        camera.rotation.y -= 0.05;
-      }
-    }
-  }
-  previousClientX = event.clientX;
-}
-
-// Moving Objects and Camera Events and Handlers
 var movingUp = false;
 var movingRight = false;
 var movingDown = false;
@@ -207,7 +174,6 @@ function centreCamera() {
   });
 }
 
-document.onmousemove = rotateCamera;
 document.onkeydown = moveObjectsAndCamera;
 document.onkeyup = stopObjectsAndCamera;
 
